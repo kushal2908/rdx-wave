@@ -8,13 +8,13 @@ export default function Home() {
     },
   ];
   return (
-    <div className="container mx-auto">
-      <p className="text-3xl font-semibold bg-gradient-to-r from-teal-600 to-red-900 bg-clip-text text-transparent mt-12">
+    <div className="">
+      <p className="text-3xl font-semibold bg-gradient-to-r from-teal-600 to-red-900 bg-clip-text text-transparent">
         Radix Primitives
       </p>
       <p className="text-gray-800">Components using Radix/primitives</p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 ">
         {links?.map((d: any) => (
           <Link key={d?.href} to={d?.href}>
             <div className="bg-white p-4 rounded-md hover:shadow-md border border-gray-300 transition-all duration-100">

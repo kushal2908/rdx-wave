@@ -3,47 +3,46 @@ import { cn } from "../../utils/helper";
 import { radiusStyle, sizes, variantStyle } from "./button.style";
 
 type Props = {
-  children?: React.ReactNode;
   size?: "sm" | "md" | "lg" | "xl";
   variant?: "solid" | "light" | "outline" | "link";
+  type?: "submit" | "reset" | "button";
+  radius?: "sm" | "md" | "lg";
+  color?: "red" | "green" | "blue" | "gray";
   onClick?: () => void;
   disabled?: boolean;
   loading?: boolean;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   className?: string;
-  type?: "submit" | "reset" | "button";
-  radius?: "sm" | "md" | "lg";
-  color?: "red" | "green" | "blue" | "gray";
+  children?: React.ReactNode;
 };
 
 export default function Button({
-  children,
-  size,
-  variant,
+  size = "md",
+  variant = "solid",
+  type = "button",
+  radius = "md",
+  color = "blue",
   onClick,
   disabled,
   loading,
   startIcon,
   endIcon,
   className,
-  type,
-  radius,
-  color,
+  children,
 }: Props) {
-  const sizeClass = sizes[size || "md"];
-  const variantClass = variantStyle(color || "blue")[variant || "solid"];
-  const radiusClass = radiusStyle[radius || "md"];
+  const sizeClass = sizes[size];
+  const variantClass = variantStyle(color)[variant];
+  const radiusClass = radiusStyle[radius];
 
   return (
     <button
-      className={cn(sizeClass, variantClass, className, radiusClass)}
+      className={cn(sizeClass, variantClass, radiusClass, className)}
       onClick={onClick}
-      type={type || "button"}
+      type={type}
       disabled={disabled || loading}
-      aria-disabled={disabled || loading}
     >
-      <div className="flex items-between justify-center gap-2">
+      <div className="flex justify-between items-center gap-2">
         {startIcon}
         <span>{children}</span>
         {endIcon}
