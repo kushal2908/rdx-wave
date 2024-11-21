@@ -6,6 +6,10 @@ export default function Home() {
       name: "Button",
       href: "/button",
     },
+    {
+      name: "Modal",
+      href: "/modal",
+    },
   ];
   return (
     <div className="">

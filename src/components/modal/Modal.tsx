@@ -9,7 +9,7 @@ type Props = {
   children?: React.ReactNode;
   onClose?: () => void;
   onConfirm?: () => void;
-  closeWhenClickedOutside?: boolean;
+  isStatic?: boolean;
 };
 
 export default function Modal({
@@ -20,10 +20,10 @@ export default function Modal({
   children,
   onClose,
   onConfirm,
-  closeWhenClickedOutside,
+  isStatic,
 }: Props) {
   const handleStaticBackDrop = (e: Event) => {
-    !closeWhenClickedOutside ? e.preventDefault() : null;
+    !isStatic ? null : e.preventDefault();
   };
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
