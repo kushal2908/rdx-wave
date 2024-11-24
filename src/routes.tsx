@@ -3,6 +3,7 @@ import ButtonPage from "./pages/ButtonPage";
 import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 import ModalPage from "./pages/ModalPage";
+import FormPage from "./pages/Form";
 
 export const AppRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -10,6 +11,7 @@ export const AppRouter = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/button" element={<ButtonPage />} />
       <Route path="/modal" element={<ModalPage />} />
+      <Route path="/form" element={<FormPage />} />
     </Route>
   )
 );

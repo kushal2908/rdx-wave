@@ -13,7 +13,13 @@ export default function ModalPage({}: Props) {
         open={modalOpen}
         onOpenChange={setModalOpen}
         title="Modal Title"
-        description="Modal Description"
+        body={
+          <>
+            <p>Modal Description</p>
+            <p>Modal Description</p>
+            <p>Modal Description</p>
+          </>
+        }
         isStatic
         onClose={() => setModalOpen(false)}
         onConfirm={() => setModalOpen(false)}

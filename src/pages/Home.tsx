@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Card from "../components/card/Card";
 
 export default function Home() {
   const links = [
@@ -9,6 +10,10 @@ export default function Home() {
     {
       name: "Modal",
       href: "/modal",
+    },
+    {
+      name: "Form",
+      href: "/form",
     },
   ];
   return (
@@ -21,9 +26,9 @@ export default function Home() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 ">
         {links?.map((d: any) => (
           <Link key={d?.href} to={d?.href}>
-            <div className="bg-white p-4 rounded-md hover:shadow-md border border-gray-300 transition-all duration-100">
+            <Card isElevated>
               <p className="text-xl font-semibold text-gray-600 ">{d?.name}</p>
-            </div>
+            </Card>
           </Link>
         ))}
       </div>
