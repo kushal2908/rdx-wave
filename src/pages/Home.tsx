@@ -15,7 +15,12 @@ export default function Home() {
       name: "Form",
       href: "/form",
     },
+    {
+      name: "Input",
+      href: "/input",
+    },
   ];
+
   return (
     <div className="">
       <p className="text-3xl font-semibold bg-gradient-to-r from-teal-600 to-red-900 bg-clip-text text-transparent">
